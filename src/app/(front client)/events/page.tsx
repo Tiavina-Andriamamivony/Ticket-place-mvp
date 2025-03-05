@@ -16,9 +16,7 @@ export default function page() {
         <h1 className="text-3xl text-white">cards</h1>
         
         </div>
-
         
-
     </div>
   )
 }
