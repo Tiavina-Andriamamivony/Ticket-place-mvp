@@ -9,9 +9,12 @@ import Link from 'next/link';
 export default async function Cards() {
 const Events = await prisma.evenement.findMany({
     orderBy:{nom:'asc'},
+    include: {tickets: true}
     
 
 })
+
+
 
 
 
@@ -20,31 +23,36 @@ const Events = await prisma.evenement.findMany({
         {
             Events.map((Event)=>
             (
+                
                 <Card key={Event.id} className="bg-slate-400">
                 <CardHeader>
                   <CardTitle>{Event.nom}</CardTitle>
                 </CardHeader>
                 <CardContent>
+                    
                 <h2>Description:</h2>
                 <p>{Event.description}</p>
                 <br />
                 <h2>Date de debut:</h2>
-                <p>{""+Event.dateDebut}</p>
+                <p>{(""+Event.dateDebut).slice(0,(""+Event.dateDebut).indexOf("G"))}</p>
                 
                 <br />
                 <h2>Date de fin:</h2>
-                <p>{""+Event.dateFin}</p>
+                <p>{(""+Event.dateFin).slice(0,(""+Event.dateFin).indexOf("G"))}</p>
+                <br />
+
                 </CardContent>
                 <CardFooter>
                   <Button className="bg-slate-800">
-                    <Link href={`/Events/Event/${Event.id}`} className="font-bold">Book</Link>
+                    <Link href={`/events/event/${Event.id}`} className="font-bold">View details</Link>
                   </Button>
                 </CardFooter>
               </Card>
+              
             )
             )
+            
         }
-        
         </div>
   )
 }
