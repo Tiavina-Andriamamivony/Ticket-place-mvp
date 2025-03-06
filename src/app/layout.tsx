@@ -3,6 +3,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
+import { config } from "@fortawesome/fontawesome-svg-core";
+
+config.autoAddCss = false; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

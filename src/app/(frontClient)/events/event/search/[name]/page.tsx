@@ -1,13 +1,19 @@
 import React from 'react'
-import prisma from '../../lib/db';
+import prisma from '../../../../../../../lib/db';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import Image from 'next/image';
-import { Button } from './ui/button';
+import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 
-export default async function Cards() {
+export default async function SearchByName(
+    {params}:{params: Promise<{name: string}>}
+) {
 const Events = await prisma.evenement.findMany({
+    where: {
+        nom: {
+            contains: (await params).name
+        }},
     orderBy:{nom:'asc'},
     include: {tickets: true,
       categorie: true,
