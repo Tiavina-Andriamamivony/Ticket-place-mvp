@@ -28,9 +28,7 @@ const Events = await prisma.evenement.findMany({
             (
                 
                 <Card key={Event.id} className="bg-slate-400 w-2/4">
-                <CardHeader>
-                  <CardTitle>{Event.nom}</CardTitle>
-                </CardHeader>
+                <br />
                 <CardContent className='flex justify-center items-center gap-1'>
                   <Image 
                     src={""+Event.imageUrl}
@@ -44,7 +42,7 @@ const Events = await prisma.evenement.findMany({
                     <br />
                     <p className='text-xl'> {Event.description} </p>
                     <br />
-                    <p className='font-semibold p-5 bg-slate-950 rounded-lg w-fit text-white'>{Event.categorie.nom}</p>
+                    <p className='font-semibold p-3 bg-slate-950 rounded-lg w-fit text-white'>{Event.categorie.nom}</p>
                   </div>
                 
 
