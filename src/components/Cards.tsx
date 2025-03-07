@@ -48,7 +48,7 @@ const Events = await prisma.evenement.findMany({
 
                 </CardContent>
                 <CardFooter>
-                  <Button className="bg-slate-800">
+                  <Button >
                     <Link href={`/events/event/${Event.id}`} className="font-bold">View details</Link>
                   </Button>
                 </CardFooter>

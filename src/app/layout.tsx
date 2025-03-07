@@ -6,7 +6,6 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
 import { config } from "@fortawesome/fontawesome-svg-core";
-
 config.autoAddCss = false;
 
 const geistSans = Geist({
@@ -26,8 +25,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  session,
 }: Readonly<{
   children: React.ReactNode;
+  session: any;
 }>) {
   return (
     <html lang="en">
@@ -44,6 +45,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </ThemeProvider>
+        
       </body>
     </html>
   );
