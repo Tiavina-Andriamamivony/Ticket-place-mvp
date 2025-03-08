@@ -1,5 +1,7 @@
 "use client"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 import { useAuth } from '@clerk/nextjs'
 import { useRouter } from 'next/navigation'
@@ -16,7 +18,7 @@ export default function CreateEvent() {
   }, [isLoaded, userId, router])
 
   if (!isLoaded || !userId) {
-    return <div>Loading...</div>
+    return <div className='w-full h-screen flex justify-center items-center '>  <FontAwesomeIcon icon={faSpinner} size='5x' className='animate-spin'/></div>
   }
 
   return (

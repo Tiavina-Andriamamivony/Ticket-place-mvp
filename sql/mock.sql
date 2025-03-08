@@ -19,11 +19,11 @@ INSERT INTO lieux (id, nom, adresse, ville, "codePostal", pays, capacite, "coord
 SELECT setval('lieux_id_seq', (SELECT MAX(id) FROM lieux));
 
 -- Insertions pour la table utilisateurs
-INSERT INTO utilisateurs (id, nom, prenom, email, "motDePasse", telephone, role) VALUES 
-(1, 'Dupont', 'Jean', 'jean.dupont@email.com', 'motdepasse123', '+33612345678', 'ORGANISATEUR'),
-(2, 'Martin', 'Sophie', 'sophie.martin@email.com', 'password456', '+33687654321', 'CLIENT'),
-(3, 'Leroy', 'Pierre', 'pierre.leroy@email.com', 'admin789', '+33654321987', 'ADMIN'),
-(4, 'Dubois', 'Marie', 'marie.dubois@email.com', 'organiser123', '+33623456789', 'ORGANISATEUR');
+INSERT INTO utilisateurs (id, nom, prenom, email, telephone, role) VALUES 
+(1, 'Dupont', 'Jean', 'jean.dupont@email.com',  '+33612345678', 'ORGANISATEUR'),
+(2, 'Martin', 'Sophie', 'sophie.martin@email.com', '+33687654321', 'CLIENT'),
+(3, 'Leroy', 'Pierre', 'pierre.leroy@email.com','+33654321987', 'ADMIN'),
+(4, 'Dubois', 'Marie', 'marie.dubois@email.com', '+33623456789', 'ORGANISATEUR');
 
 -- Réinitialiser la séquence pour utilisateurs
 SELECT setval('utilisateurs_id_seq', (SELECT MAX(id) FROM utilisateurs));

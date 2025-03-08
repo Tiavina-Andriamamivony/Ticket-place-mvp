@@ -1,11 +1,3 @@
-/*
-  Warnings:
-
-  - You are about to drop the `Account` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `Session` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `User` table. If the table is not empty, all the data it contains will be lost.
-
-*/
 -- CreateEnum
 CREATE TYPE "Role" AS ENUM ('ADMIN', 'ORGANISATEUR', 'CLIENT');
 
@@ -18,15 +10,12 @@ CREATE TYPE "StatutPaiement" AS ENUM ('EN_ATTENTE', 'COMPLETE', 'ECHOUE', 'REMBO
 -- CreateEnum
 CREATE TYPE "MethodePaiement" AS ENUM ('CARTE_CREDIT', 'PAYPAL', 'VIREMENT', 'AUTRE');
 
-
-
 -- CreateTable
 CREATE TABLE "utilisateurs" (
     "id" SERIAL NOT NULL,
     "nom" TEXT NOT NULL,
     "prenom" TEXT NOT NULL,
     "email" TEXT NOT NULL,
-    "motDePasse" TEXT NOT NULL,
     "telephone" TEXT,
     "role" "Role" NOT NULL DEFAULT 'CLIENT',
     "dateInscription" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
