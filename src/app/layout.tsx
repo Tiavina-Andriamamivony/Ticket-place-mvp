@@ -6,6 +6,17 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
 import { config } from "@fortawesome/fontawesome-svg-core";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
+
+
+
 config.autoAddCss = false;
 
 const geistSans = Geist({
@@ -31,7 +42,8 @@ export default function RootLayout({
   session: any;
 }>) {
   return (
-    <html lang="en">
+    <ClerkProvider>
+      <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -48,5 +60,7 @@ export default function RootLayout({
         
       </body>
     </html>
+    </ClerkProvider>
+    
   );
 }

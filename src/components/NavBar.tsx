@@ -8,6 +8,13 @@ import { Button } from './ui/button';
 import { useState } from 'react';
 import ModeToggle from './themeButton';
 import { useTheme } from 'next-themes';
+import {
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
 
 const NavBar = () => {
     const [predica, setPredica] = useState("");
@@ -41,7 +48,14 @@ const NavBar = () => {
                     <Link href="/createEvent" className={`p-3 rounded-lg transition-all duration-300 ${theme === 'dark' ? 'text-white hover:bg-gray-200 hover:text-black' : 'text-black hover:bg-gray-800 hover:text-white'}`}>
                         Create event
                     </Link>
+
                     <ModeToggle />
+                </div>
+                <div className='w-fit h-fit p-3 m-3'>
+            
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
                 </div>
             </div>
         </nav>
