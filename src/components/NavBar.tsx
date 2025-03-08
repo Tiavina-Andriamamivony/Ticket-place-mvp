@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Input } from './ui/input';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faBars, faTimes, faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import { Button } from './ui/button';
 import { useState } from 'react';
 import ModeToggle from './themeButton';
@@ -39,23 +39,25 @@ const NavBar = () => {
                     <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} className={`text-2xl ${theme === 'dark' ? 'text-white' : 'text-black'}`} />
                 </button>
                 <div className={`flex flex-col md:flex-row md:items-center gap-3 w-full md:w-auto ${menuOpen ? 'block' : 'hidden'} md:block`}>
-                    <Link href="/login" className={`p-3 rounded-lg transition-all duration-300 ${theme === 'dark' ? 'text-white hover:bg-gray-200 hover:text-black' : 'text-black hover:bg-gray-800 hover:text-white'}`}>
+                    <Link href="/login" className={`p-3 m-2 rounded-lg transition-all duration-300 ${theme === 'dark' ? 'text-white hover:bg-gray-200 hover:text-black' : 'text-black hover:bg-gray-800 hover:text-white hover:font-bold'}`}>
                         Login
                     </Link>
-                    <Link href="/events" className={`p-3 rounded-lg transition-all duration-300 ${theme === 'dark' ? 'text-white hover:bg-gray-200 hover:text-black' : 'text-black hover:bg-gray-800 hover:text-white'}`}>
+                    <Link href="/events" className={`p-3 m-2 rounded-lg transition-all duration-300 ${theme === 'dark' ? 'text-white hover:bg-gray-200 hover:text-black' : 'text-black hover:bg-gray-800 hover:text-white hover:font-bold'}`}>
                         Home
                     </Link>
-                    <Link href="/createEvent" className={`p-3 rounded-lg transition-all duration-300 ${theme === 'dark' ? 'text-white hover:bg-gray-200 hover:text-black' : 'text-black hover:bg-gray-800 hover:text-white'}`}>
+                    <Link href="/createEvent" className={`p-3 m-2 rounded-lg transition-all duration-300 ${theme === 'dark' ? 'text-white hover:bg-gray-200 hover:text-black' : 'text-black hover:bg-gray-800 hover:text-white  hover:font-bold'}`}>
                         Create event
                     </Link>
 
                     <ModeToggle />
                 </div>
                 <div className='w-fit h-fit p-3 m-3'>
-            
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
+                    <SignedOut>
+                    <FontAwesomeIcon icon={faCircleUser} size='lg' />
+                    </SignedOut>
                 </div>
             </div>
         </nav>
