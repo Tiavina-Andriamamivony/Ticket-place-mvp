@@ -49,6 +49,9 @@ const NavBar = () => {
                         Create event
                     </Link>
 
+                    <Link href="/profile" className={`p-3 m-2 rounded-lg transition-all duration-300 ${theme === 'dark' ? 'text-white hover:bg-gray-200 hover:text-black' : 'text-black hover:bg-gray-800 hover:text-white  hover:font-bold'}`}>
+                        Profile
+                    </Link>
                     <ModeToggle />
                 </div>
                 <div className='w-fit h-fit p-3 m-3'>
