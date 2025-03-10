@@ -5,7 +5,7 @@ Ce projet est une version basique de [ticket place](https://ticketplace.io), dé
 - **Next.js 15**
 - **React 19**
 - **PostgreSQL**
-- **NextAuth** (Authentification)
+- **Clerk** (Authentification)
 - **ShadCN UI** (UI Components)
 - **Prisma** (ORM)
 
@@ -46,7 +46,7 @@ Assurez-vous d'avoir installé :
    ```
 
 ## 🛠️ Fonctionnalités
-- Authentification avec **NextAuth**
+- Authentification avec **Clerk**
 - Gestion des utilisateurs et des événements avec **Prisma** & **PostgreSQL**
 - UI moderne avec **ShadCN UI**
 - API REST/GraphQL pour la gestion des tickets (à venir)
