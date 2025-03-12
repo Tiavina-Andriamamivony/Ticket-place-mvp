@@ -39,9 +39,7 @@ const NavBar = () => {
                     <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} className={`text-2xl ${theme === 'dark' ? 'text-white' : 'text-black'}`} />
                 </button>
                 <div className={`flex flex-col md:flex-row md:items-center gap-3 w-full md:w-auto ${menuOpen ? 'block' : 'hidden'} md:block`}>
-                    <Link href="/login" className={`p-3 m-2 rounded-lg transition-all duration-300 ${theme === 'dark' ? 'text-white hover:bg-gray-200 hover:text-black' : 'text-black hover:bg-gray-800 hover:text-white hover:font-bold'}`}>
-                        Login
-                    </Link>
+
                     <Link href="/events" className={`p-3 m-2 rounded-lg transition-all duration-300 ${theme === 'dark' ? 'text-white hover:bg-gray-200 hover:text-black' : 'text-black hover:bg-gray-800 hover:text-white hover:font-bold'}`}>
                         Home
                     </Link>

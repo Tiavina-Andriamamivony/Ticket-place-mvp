@@ -14,7 +14,7 @@ import {
   SignedOut,
   UserButton,
 } from '@clerk/nextjs'
-
+import ClientLayout from "./ClientLayout";
 
 
 config.autoAddCss = false;
@@ -42,25 +42,9 @@ export default function RootLayout({
   session: any;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <NavBar />
-          {children}
-          <Footer />
-        </ThemeProvider>
-        
-      </body>
-    </html>
-    </ClerkProvider>
+    <ClientLayout>
+    {children}
+  </ClientLayout>
     
   );
 }

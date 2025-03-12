@@ -4,7 +4,8 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/componen
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSadTear } from '@fortawesome/free-solid-svg-icons';
 
 export default async function SearchByName(
     {params}:{params: Promise<{name: string}>}
@@ -57,7 +58,7 @@ const Events = await prisma.evenement.findMany({
                   </Card>
                 ))
             ) : (
-                <p className="text-xl font-semibold">Aucun événement trouvé.</p>
+                <p className="text-xl font-semibold"> Not found <FontAwesomeIcon icon={faSadTear} size='lg' /> </p>
             )
         }
     </div>

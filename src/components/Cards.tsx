@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/componen
 import Image from 'next/image';
 import { Button } from './ui/button';
 import Link from 'next/link';
-
+import { MagicCard } from './magicui/magic-card';
 
 export default async function Cards() {
 const Events = await prisma.evenement.findMany({
@@ -29,6 +29,7 @@ const Events = await prisma.evenement.findMany({
                 
                 <Card key={Event.id} className="bg-slate-400 w-2/4">
                 <br />
+                <MagicCard>
                 <CardContent className='flex justify-center items-center gap-1'>
                   <Image 
                     src={""+Event.imageUrl}
@@ -52,6 +53,7 @@ const Events = await prisma.evenement.findMany({
                     <Link href={`/events/event/${Event.id}`} className="font-bold">View details</Link>
                   </Button>
                 </CardFooter>
+                </MagicCard>
               </Card>
               
             )
