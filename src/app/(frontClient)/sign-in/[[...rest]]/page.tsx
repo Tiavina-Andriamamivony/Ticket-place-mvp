@@ -1,16 +1,25 @@
+"use client";
+
+
 import { SignIn, useAuth } from "@clerk/nextjs";
-import { useRouter } from "next/router";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 export default function SignInPage() {
-  const { isSignedIn } = useAuth();
+  const { isSignedIn, isLoaded } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
-    if (isSignedIn) {
+    if (isLoaded && isSignedIn) {
       router.push("/events");
     }
-  }, [isSignedIn, router]);
+  }, [isLoaded, isSignedIn, router]);
+
+  if (!isLoaded) {
+    return <div><FontAwesomeIcon icon={faSpinner} size='5x' className='animate-spin'/></div>;
+  }
 
   return (
     <div className="flex justify-center items-center m-8">
