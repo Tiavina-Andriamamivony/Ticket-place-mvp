@@ -32,13 +32,16 @@ export default function AuroraBackgroundDemo() {
         <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
         And your access, is limitless.
         </div>
+        <Link href="/sign-in" >
           
         <ShimmerButton className="shadow-2xl">
-            <Link href="/sign-in" className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-            Get your ticket now.
-            </Link>
+          <p className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+          Get your ticket now.
+          
+          </p> 
+            
         </ShimmerButton>
-
+</Link>
         
         
       </motion.div>
